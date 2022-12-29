@@ -30,6 +30,9 @@ class ProgramController < ApplicationController
         
     end
     def add_user_to_program
+        if current_user.category == school
+            
+        end
 
     end
 

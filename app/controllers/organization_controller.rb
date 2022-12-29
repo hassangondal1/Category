@@ -32,7 +32,7 @@ class OrganizationController < ApplicationController
     end
 
     def detail
-        
+
     end 
     def update_user(id)
         current_user.update(organization_id: id)
