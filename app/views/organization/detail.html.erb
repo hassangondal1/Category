@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="mb-4 mt-4 card card-body bg-light" >
+       <h4><%= @organization.name %></h4>
+        <p>
+            <h5>Address:</h5>
+            <%= @organization.address %>
+            <br>
+            <br>
+
+            <h5>Contact No:</h5>
+            <%= @organization.contact_no %>
+            <br>
+            <br>
+
+            <h5>HQ:</h5>
+            <%= @organization.hQ %>
+            <br>
+            <br>
+            
+
+            <h5>Category:</h5>
+            <%= @organization.category %>
+            <br>
+            <br>
+
+            <h5>About:</h5>
+            <%= @organization.about%>
+            <br>
+            
+
+            <h5>Logo:</h5>
+            <%if @organization.logo.attached?%>
+                <%= image_tag(@organization.logo, height: '70', width: '90') %> 
+            <%else %>
+                <p>No Attachments Available </p>
+            <%end%>
+
+        </p>
+
+    </div>
+</div>

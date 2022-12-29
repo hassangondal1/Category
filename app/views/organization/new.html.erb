@@ -1,0 +1,39 @@
+<%= simple_form_for(@organization , url: new_organization_path)  do |f| %>
+
+
+    <div class="container">
+        <div class="mb-4 mt-4 card card-body bg-light" >
+            <div class="mb-3">
+                <%= f.input :name %>
+            </div>
+            <div class="mb-3">
+                <%= f.input :address %>
+            </div>
+            <div class="mb-3">
+                <%= f.input :contact_no %>
+            </div>
+            <div class="mb-3">
+                <%= f.input :hQ %>
+            </div>
+            <div class="mb-3">
+                
+                <%= f.select :category, Organization.categories.keys%>
+               
+            </div>
+            <div class="mb-3">
+                <%=f.label :about %>
+                <%=f.rich_text_area :about%>
+            </div>
+            <div class="mb-3">
+                    <%= f.label :logo %><br />
+                    <%= f.file_field :logo %>
+            </div> 
+            
+            <div class="mb-3">
+                <%= f.button :submit,class:"btn btn-primary" %>
+            </div>
+           
+        </div>
+    </div>
+<% end %>
+

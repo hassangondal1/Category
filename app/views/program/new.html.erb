@@ -1,0 +1,33 @@
+<%= simple_form_for(@program , url: new_program_path)  do |f| %>
+
+
+    <div class="container">
+        <div class="mb-4 mt-4 card card-body bg-light" >
+            <div class="mb-3">
+                <%= f.input :title %>
+            </div>
+            <div class="mb-3">
+                <%=f.label :description %>
+                <%=f.rich_text_area :description%>
+            </div>    
+            <div class="mb-3">
+                <%=f.label :synopsis %>
+                <%=f.rich_text_area :synopsis%>
+            </div>
+            <div class="mb-3">
+                <%=f.label :about %>
+                <%=f.rich_text_area :about%>
+            </div>
+            <div class="mb-3">
+                <%=f.input :start_date %>
+            </div> 
+            <div class="mb-3">
+                <%=f.input :end_date %>
+            </div>
+            
+            <div class="mb-3">
+                <%= f.button :submit,class:"btn btn-primary" %>
+            </div>
+        </div>
+    </div>
+<% end %>

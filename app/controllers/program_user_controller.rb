@@ -1,0 +1,5 @@
+class ProgramUserController < ApplicationController
+
+    
+
+end

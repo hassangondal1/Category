@@ -1,0 +1,42 @@
+
+<div class="container">
+    <div class="mb-4 mt-4 card card-body bg-light" >
+        <h4>Organizations</h4>
+        
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Contact No</th>
+                    <th scope="col">HQ</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">About</th>
+                    <th scope="col">Logo</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+        <tbody>
+            
+            <% @organizations.each do |o| %>
+                <tr>
+                    <th scope="row"><%=o.id%></th>
+                    <td><%=o.name%></td>
+                    <td><%=o.address%></td>
+                    <td><%=o.contact_no%></td>
+                    <td><%=o.hQ%></td>
+                    <td><%=o.category%></td>
+                    <td><%=o.about%></td>
+                    <%if o.logo.attached?%>
+                        <td><%= image_tag(o.logo, height: '50', width: '50') %></td> 
+                    <%else %>
+                        <td>No Attachments Available</td>
+                    <%end%> 
+                    <td><%= link_to "Show" , detail_organization_path(o.id) , class:"btn btn-outline-secondary"%></td>
+                </tr>
+                
+            <%end%>
+        </table>
+    </div>
+</div>

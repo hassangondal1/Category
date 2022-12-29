@@ -1,0 +1,32 @@
+
+<div class="container">
+    <div class="mb-4 mt-4 card card-body bg-light" >
+        <h4>Programs</h4>
+        
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Action</th>
+                </tr>
+            </thead>
+        <tbody>
+            
+            <% @programs.each do |p| %>
+                <tr>
+                <th scope="row"><%=p.id%></th>
+                <td><%=p.title%></td>
+                <td><%=p.description%></td>
+                <td><%=p.start_date%></td>
+                <td><%=p.end_date%></td>
+                <td><%= link_to "Show", detail_program_path(p.id) , class:"btn btn-outline-secondary"%></td>
+                </tr>
+               
+            <%end%>
+        </table>
+    </div>
+</div>
