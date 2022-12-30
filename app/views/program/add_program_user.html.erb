@@ -1,0 +1,19 @@
+<h5>Hello</h5>
+<%= simple_form_for(@program_user , url: add_program_user_path)  do |f| %>
+
+
+    <div class="container">
+        <div class="mb-4 mt-4 card card-body bg-light" >
+            <div class="mb-3">
+                <%= f.input :user_id,  as: :select, collection: User.all.map {|x|  [x.email,x.id  ]}  %>
+            </div>
+            <div class="mb-3">
+                <%=f.input :program_id,  as: :select, collection: Program.all.map {|x|  [x.title ,x.id ]}  %>
+            </div>
+            
+            <div class="mb-3">
+                <%= f.button :submit,class:"btn btn-primary" %>
+            </div>
+        </div>
+    </div>
+<% end %>

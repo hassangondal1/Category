@@ -1,7 +1,7 @@
 class ProgramController < ApplicationController
     before_action :set_resources , only:[:show] 
     before_action :set_detail_resources , only:[:detail]
-    before_action :set_users , only:[:add_user_to_program]
+    before_action :set_users , only:[:add_program_user]
     
     def new
         @program = Program.new 
@@ -29,11 +29,16 @@ class ProgramController < ApplicationController
     def detail
         
     end
-    def add_user_to_program
-        if current_user.category == school
-            
+    def add_program_user
+        @program_user = ProgramUser.new
+    end
+    def add_program_user_create
+        @program_user = ProgramUser.new
+        if current_user.category == "school"
+           if ProgramUser.create(user_id:params[:program_user][:user_id]  , program_id:params[:program_user][:program_id])
+                redirect_to root_path , notice:"Sucess"
+           end
         end
-
     end
 
     private
@@ -52,6 +57,7 @@ class ProgramController < ApplicationController
 
     def set_users
         @users = User.all
+        @programs = Program.all
     end
 
 end

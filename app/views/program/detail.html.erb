@@ -2,10 +2,11 @@
 <div class="container">
 
     <div class="mb-4 mt-4 card card-body bg-light" >
-        <h4><%= @program.title %></h4>
-        <p>
-            <div class="row">
-                <div class="col">
+        <div class="row">
+            <div class="col">
+                <h4><%= @program.title %></h4>
+                <p>
+            
             
                     <h5>Description:</h5>
                     <%= @program.description %>
@@ -29,13 +30,14 @@
 
                     <h5>End Date:</h5>
                     <%= @program.end_date%>
+                </p>
 
-                </div>
-                <div class="col">
-                    <%= link_to "Show" , class:"btn btn-outline-secondary"%>
-                </div>
             </div>
-        </p>
+            <div class="col">
+                <%= link_to "Add User To Programs" ,add_program_user_path, class:"btn btn-outline-secondary"%>
+            </div>
+        </div>
+                
 
     
     </div>
