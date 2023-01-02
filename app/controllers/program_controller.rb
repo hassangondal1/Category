@@ -36,8 +36,10 @@ class ProgramController < ApplicationController
         @program_user = ProgramUser.new
         if current_user.category == "school"
            if ProgramUser.create(user_id:params[:program_user][:user_id]  , program_id:params[:program_user][:program_id])
-                redirect_to root_path , notice:"Sucess"
+                redirect_to root_path , notice:"Successfully Enrolled User To Program"
            end
+        else
+            redirect_to root_path , alert:"You aren't eligible to Enroll User"
         end
     end
 
@@ -53,6 +55,7 @@ class ProgramController < ApplicationController
 
     def set_detail_resources
         @program = Program.find(params[:id])
+        @programusers = ProgramUser.where(program_id: params[:id])
     end
 
     def set_users

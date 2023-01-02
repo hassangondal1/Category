@@ -35,6 +35,9 @@
             </div>
             <div class="col">
                 <%= link_to "Add User To Programs" ,add_program_user_path, class:"btn btn-outline-secondary"%>
+                    <br>
+                    <br>
+                <%=@programusers.map{|x| x.user.email }%>
             </div>
         </div>
                 
