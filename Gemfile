@@ -18,6 +18,9 @@ gem "puma", "~> 5.0"
 gem "devise"
 
 gem 'simple_form'
+gem 'hotwire-rails'
+gem 'activeadmin'
+gem 'sass-rails'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
