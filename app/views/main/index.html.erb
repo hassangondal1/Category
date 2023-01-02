@@ -1,4 +1,4 @@
 <h2>Category App</h2>
 <% if user_signed_in? && current_user.avatar.attached? %>
-<%= image_tag(current_user.avatar, height: '130', width: '130') %>
+    <%= image_tag(current_user.avatar, height: '130', width: '130') %>
 <%end%>

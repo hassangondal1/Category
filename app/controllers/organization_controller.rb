@@ -41,18 +41,16 @@ class OrganizationController < ApplicationController
     
     private
     
-    def organization_params
-
-        
-            params.require(:organization).permit(:name , :address , :contact_no ,:hQ , :category ,:about , :logo )
-
-   
+    def organization_params 
+        params.require(:organization).permit(:name , :address , :contact_no ,:hQ , :category ,:about , :logo )
     end
 
     def set_show_resources
         @organizations = Organization.all
     end
+
     def set_detail_resources
         @organization = Organization.find(params[:id])
     end
+    
 end

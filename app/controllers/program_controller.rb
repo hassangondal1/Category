@@ -29,9 +29,11 @@ class ProgramController < ApplicationController
     def detail
         
     end
+
     def add_program_user
         @program_user = ProgramUser.new
     end
+
     def add_program_user_create
         @program_user = ProgramUser.new
         
@@ -49,6 +51,7 @@ class ProgramController < ApplicationController
     def add_program_user_create_params
         params.require(:program_user).permit(:user_id , :program_id)
     end
+    
     def program_params
         params.require(:program).permit(:user_id , :title , :description , :synopsis , :about , :start_date, :end_date)
     end
