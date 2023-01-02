@@ -34,8 +34,9 @@ class ProgramController < ApplicationController
     end
     def add_program_user_create
         @program_user = ProgramUser.new
+        
         if current_user.category == "school"
-           if ProgramUser.create(user_id:params[:program_user][:user_id]  , program_id:params[:program_user][:program_id])
+           if ProgramUser.create(add_program_user_create_params)
                 redirect_to root_path , notice:"Successfully Enrolled User To Program"
            end
         else
@@ -45,6 +46,9 @@ class ProgramController < ApplicationController
 
     private
 
+    def add_program_user_create_params
+        params.require(:program_user).permit(:user_id , :program_id)
+    end
     def program_params
         params.require(:program).permit(:user_id , :title , :description , :synopsis , :about , :start_date, :end_date)
     end

@@ -34,10 +34,17 @@
 
             </div>
             <div class="col">
-                <%= link_to "Add User To Programs" ,add_program_user_path, class:"btn btn-outline-secondary"%>
+                <%= link_to "Add User To Programs" ,add_program_user_path(@program.id), class:"btn btn-outline-secondary"%>
                     <br>
                     <br>
-                <%=@programusers.map{|x| x.user.email }%>
+                <h5>Users Enrolled In Prorgam:</h5>
+                   <% count = 1 %>
+                <%@programusers.each do |pu|%>
+                    <br>
+                    <%= count %>
+                    <%= pu.user.email%>
+                    <%count+=1%>
+                <%end%>
             </div>
         </div>
                 

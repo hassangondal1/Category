@@ -8,7 +8,8 @@
                 <%= f.input :user_id,  as: :select, collection: User.all.map {|x|  [x.email,x.id  ]}  %>
             </div>
             <div class="mb-3">
-                <%=f.input :program_id,  as: :select, collection: Program.all.map {|x|  [x.title ,x.id ]}  %>
+                
+               <%= f.hidden_field :program_id , value: params[:id] %>
             </div>
             
             <div class="mb-3">

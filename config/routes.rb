@@ -12,7 +12,7 @@ get 'program/new', to: 'program#new' , as: "new_program"
 post 'program/new', to: 'program#create'
 get 'program/show', to: 'program#show' , as: "show_program"
 get 'program/detail.:id', to: 'program#detail' , as: "detail_program"
-get 'program/add_program_user', to: 'program#add_program_user' , as: "add_program_user"
+get 'program/add_program_user.:id', to: 'program#add_program_user' , as: "add_program_user"
 post 'program/add_program_user', to: 'program#add_program_user_create' 
 
 
