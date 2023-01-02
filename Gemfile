@@ -21,6 +21,8 @@ gem 'simple_form'
 gem 'hotwire-rails'
 gem 'activeadmin'
 gem 'sass-rails'
+gem "chartkick"
+gem "groupdate"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"

@@ -1,4 +1,17 @@
-<h2>Category App</h2>
-<% if user_signed_in? && current_user.avatar.attached? %>
-    <%= image_tag(current_user.avatar, height: '130', width: '130') %>
-<%end%>
+
+<div class = "container">
+    <h2>Welcome</h2>
+    <% if user_signed_in? && current_user.avatar.attached? %>
+        <h5>User Avatar.</h5>
+        <%= image_tag(current_user.avatar, height: '130', width: '130') %>
+    <%end%>
+</div>
+<div class = "container">
+    <h5>User Creation Graph</h5>
+    <%= line_chart User.group_by_day(:created_at).count %>
+    <h5>Program Creation Graph</h5>
+    <%= column_chart Program.group_by_day_of_week(:created_at, format: "%a").count %>
+    <h5>User Enrolled Graph</h5>
+    <%= bar_chart ProgramUser.group_by_day_of_week(:created_at, format: "%a").count %>
+</div>
+
