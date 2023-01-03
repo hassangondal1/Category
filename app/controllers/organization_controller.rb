@@ -10,15 +10,15 @@ class OrganizationController < ApplicationController
     def create
         unless current_user.category == "student"
                 
-                @organization = Organization.new(organization_params)
-            
-                if @organization.save
-                    update_user(@organization.id)
-                    redirect_to root_path , notice:"Oganization Added sucessfully"
-                else
-                    flash[:alert] = "Something Went Wrong"
-                    render :new
-                end
+            @organization = Organization.new(organization_params)
+        
+            if @organization.save
+                update_user(@organization.id)
+                redirect_to root_path , notice:"Oganization Added sucessfully"
+            else
+                flash[:alert] = "Something Went Wrong"
+                render :new
+            end
 
 
         else
